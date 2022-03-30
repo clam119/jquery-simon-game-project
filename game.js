@@ -15,9 +15,13 @@ function nextSequence() {
     playSound(randomChosenColour);
 }
 
-
-
-
+function animatePress(currentColour) {
+    $(this).addClass("pressed");
+    $("#" + currentColor).addClass("pressed");
+    setTimeout(function () {
+        $("#" + currentColor).removeClass("pressed");
+    }, 100);
+}
 
 $(".btn").click(function () {
     var userChosenColour = $(this).attr("id");
@@ -25,11 +29,9 @@ $(".btn").click(function () {
     $("#" + userChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(userChosenColour);
     animatePress(userChosenColour);
+
 });
 
-function animatePress(currentColour) {
-    $(this).addClass(pressed);
-    
-}
+
 
 // $(".btn").on("click", nextSequence);
