@@ -65,7 +65,6 @@ function playSound(name) {
 }
 
 function animatePress(currentColour) {
-    // $(this).addClass("pressed");
     $("#" + currentColour).addClass("pressed");
     setTimeout(function () {
         $("#" + currentColour).removeClass("pressed");
